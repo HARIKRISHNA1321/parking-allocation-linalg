@@ -1,0 +1,9 @@
+{
+  "name": "parking-allocation-linear-algebra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parking Allocation Using Linear Algebra - University Mini-Project",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  }
+}
