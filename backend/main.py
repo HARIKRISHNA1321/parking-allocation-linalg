@@ -30,7 +30,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for local Vite development server and Vercel deployments
+@app.on_event("startup")
+def startup_event():
+    """Pre-warm linear algebra pipeline so first request completes instantly."""
+    get_math_pipeline()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
