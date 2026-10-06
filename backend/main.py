@@ -145,9 +145,8 @@ def reset_lot():
     return {"success": True, "message": "Lot reset to initial state.", "lot": lot.get_state()}
 
 
-# Mount routes under /api (standard) AND root (for Vercel rewrites)
+# Mount API routes under /api
 app.include_router(api_router, prefix="/api")
-app.include_router(api_router)
 
 
 # Standalone Uvicorn serving: mounts static files if running locally outside Vercel
